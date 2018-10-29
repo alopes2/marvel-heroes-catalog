@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import HeroCard from './HeroCard/HeroCard';
@@ -9,6 +10,13 @@ import classes from './HeroesList.module.scss';
 
 class HeroesList extends Component {
     componentDidMount() {
+        // let search = '';
+        // const queryParams = new URLSearchParams(this.props.location.search);
+        // console.log('Router props: ', this.props);
+        // if (queryParams.get('search')) {
+        //     search = queryParams.get('search');
+        //     console.log('Query Params: ', search);
+        // }
         this.props.onFetchHeroes('');
     }
 
@@ -52,4 +60,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeroesList);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HeroesList));

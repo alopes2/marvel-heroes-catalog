@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigation from './Navigation/Navigation';
 import './Layout.scss';
 class Layout extends Component {
+
     render() {
         return (
             <div className="layout">
